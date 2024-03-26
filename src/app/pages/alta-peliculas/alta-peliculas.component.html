@@ -1,0 +1,70 @@
+<div class="container d-flex justify-content-center align-items-center text-center ">
+    <div class="col-md-6 border-rounded">
+        <p>
+            <label class="label-styled">PELICULAS</label>
+            <br/><br/><br/>
+            <input type="text" class="form-control" [(ngModel)]="pelicula.titulo" placeholder="Titulo"/>
+            <small *ngIf="TituloIncorrecto" class="form-text text-danger">Ingresa el titulo</small>
+            <small *ngIf="TituloIncorrecto2" class="form-text text-danger">El titulo solo puede contener letras, numeros y espacios</small>
+           
+        </p>
+        <p>
+            <br/>
+            <input type="text" class="form-control" [(ngModel)]="pelicula.genero" placeholder="Genero"/>
+            <small *ngIf="GeneroIncorrecto" class="form-text text-danger">Ingresa tu Genero </small>
+            <small *ngIf="GeneroIncorrecto2" class="form-text text-danger">El genero solo puede contener letras y espacios </small>
+          
+        </p>
+        <p>
+            <br/>
+            <input type="text" class="form-control" [(ngModel)]="pelicula.descripcion" placeholder="Descripcion"/>
+            <small *ngIf="DescripcionIncorrecto" class="form-text text-danger">Ingresa la descripcion </small>
+            <small *ngIf="DescripcionIncorrecto2" class="form-text text-danger">Descripcion Incorrecta </small>
+          
+        </p>
+        <p>
+            <br/>
+            <input type="number" class="form-control" [(ngModel)]="pelicula.fecha" placeholder="Año de estreno"/>
+            <small *ngIf="YearIncorrecto" class="form-text text-danger">Ingresa el año de estreno </small>
+            <small *ngIf="YearIncorrecto2" class="form-text text-danger">El año de estreno solo puede tener numeros enteros</small>
+        </p>
+        <p>
+            <br/>
+            <input type="text" class="form-control" [(ngModel)]="pelicula.recaudacion" placeholder="Recaudacion"/>
+            <small *ngIf="RecaudacionIncorrecto" class="form-text text-danger">Ingresa la recaudacion de la pelicula </small>
+            <small *ngIf="RecaudacionIncorrecto2" class="form-text text-danger">La recaudación solo puede tener numeros enteros</small>
+        </p>
+        <p>
+            <br/>
+            <label class="label-2">Clasificacion</label><br/><br/>
+            <select [(ngModel)]="pelicula.clasificacion" class="form-control">
+                <option *ngFor="let tipo of tipos" value="{{tipo.id}}">
+                    {{tipo.descripcion}}
+                </option>
+            </select>
+            
+            <small *ngIf="ClasificacionIncorrecto" class="form-text text-danger">Ingresa la clasificación de la pelicula </small>
+            <small *ngIf="ClasificacionIncorrecto2" class="form-text text-danger">Ingresa una clasificacion correcta</small>
+        </p>
+        <p>
+            <label for="label-2" class="label-2">Selecciona el protagonista:</label><br/><br/>
+            <select id="opciones" class="form-control" [(ngModel)]="pelicula.protagonista">
+            <option *ngFor="let actor of actores" [value]="actor.nombre">{{ actor.nombre }}</option>
+            </select>
+            
+            <small *ngIf="ProtaIncorrecto" class="form-text text-danger">Ingresa el nombre del protagonista </small>
+            <small *ngIf="ProtaIncorrecto2" class="form-text text-danger">El nombre del protagonista solo puede tener letras y espacios</small>
+        </p>
+        <div class="container d-flex justify-content-center align-items-center text-center">
+
+            <div class="container d-flex justify-content-center align-items-center text-center">
+            
+                <div class="container d-flex justify-content-center align-items-center text-center mt-3">
+                    <button type="button" class="btn btn-outline-success" (click)="insertarPelicula()">Insertar</button>
+                    <button type="button" class="btn btn-outline-warning" (click)="updatePelicula()">Modificar</button>
+                    <button type="button" class="btn btn-outline-danger" (click)="deletePelicula()">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

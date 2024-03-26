@@ -1,0 +1,41 @@
+<div class="container">
+    <br/>
+    <div *ngIf="actores.length" style="text-align: center; color: yellow; font-size:20px; font-weight:bold"><h1>Lista Actores</h1><br/></div>
+
+    <div *ngIf="!actores.length">No hay actores registrados</div>
+
+    <table *ngIf="actores.length" class="table table-bordered border-primary">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Genero</th>
+                <th>Edad</th>
+                <th>Nacionalidad</th>
+                <th>Direccion</th>
+                <th>Ultima Pelicula</th>
+                <th>Seleccionar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let actor of actores">
+                <td>{{actor.nombre}}</td>
+                <td>{{actor.apellido}}</td>
+                <td>{{actor.genero}}</td>
+                <td>{{actor.edad}}</td>
+                <td>{{actor.nacionalidad}}</td>
+                <td>{{actor.direccion}}</td>
+                <td>{{actor.ultimaPelicula}}</td>
+                <td>
+                    <button type="button" class="btn btn-outline-secondary" (click)="selectActor(actor); mostrarDetallePelicula()">Seleccionar</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <br/><br/>
+    
+</div>
+<div *ngIf="mostrarDetalle">
+   <app-alta-actores></app-alta-actores>
+  </div>

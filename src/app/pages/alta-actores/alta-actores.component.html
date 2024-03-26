@@ -1,0 +1,82 @@
+<div class="container d-flex justify-content-center align-items-center text-center ">
+    <div class="col-md-6 border-rounded">
+            <p>
+                <label class="label-styled">ACTORES</label>
+                <br/><br/><br/>
+                <input type="text" 
+                        class="form-control" 
+                        [(ngModel)]="actor.nombre"
+                        placeholder="Nombre"
+                        name="nombre"/>
+                        <small *ngIf="NombreIncorrecto" class="form-text text-danger">Ingresa tu Nombre</small>
+                        <small *ngIf="NombreIncorrecto2" class="form-text text-danger">El nombre solo puede contener letras y espacios</small>
+            </p>
+            <p>
+                <br/>
+                <input type="text" 
+                        class="form-control" 
+                        [(ngModel)]="actor.apellido"
+                        placeholder="Apellido"
+                        id="apellido"/>
+                        <small *ngIf="ApellidoIncorrecto" class="form-text text-danger">Ingresa tu Apellido</small>
+                        <small *ngIf="ApellidoIncorrecto2" class="form-text text-danger">El apellido solo puede contener letras y espacio</small>
+            </p>
+            <p>
+                <br/>
+                <input type="number" 
+                        class="form-control" 
+                        [(ngModel)]="actor.edad"
+                        placeholder="Edad"
+                        id="edad"/>
+                        <small *ngIf="EdadIncorrecto" class="form-text text-danger">Ingresa tu Edad</small>
+                        <small *ngIf="EdadIncorrecto2" class="form-text text-danger">La edad solo puede contener numeros enteros</small>
+                 </p>
+            <p>
+                <br/>
+                <input type="text" 
+                        class="form-control" 
+                        [(ngModel)]="actor.genero"
+                        placeholder="Genero"
+                        id="genero"/>
+                        <small *ngIf="GeneroIncorrecto" class="form-text text-danger">Ingresa tu Genero </small>
+                        <small *ngIf="GeneroIncorrecto2" class="form-text text-danger">El genero solo puede contener letras y espacios </small>
+            </p>
+            <p>
+                <br/>
+                <input type="text" 
+                        class="form-control" 
+                        [(ngModel)]="actor.nacionalidad"
+                        placeholder="Nacionalidad"
+                        id="nacionalidad"/>
+                        <small *ngIf="NacionalidadIncorrecta" class="form-text text-danger">Ingresa tu Nacionalidad</small>
+                        <small *ngIf="NacionalidadIncorrecta2" class="form-text text-danger">La nacionalidad solo puede contener letras y espacios</small>
+                </p>
+            <p>
+                <br/>
+                <input type="text" 
+                        class="form-control" 
+                        [(ngModel)]="actor.direccion"
+                        placeholder="Dirección"
+                        id="direccion"/>
+                        <small *ngIf="DireccionIncorrecta" class="form-text text-danger">Ingresa tu Direccion</small>
+                        <small *ngIf="DireccionIncorrecta2" class="form-text text-danger">La direcion colo puede tener letras numeros y el signo de #</small>
+               </p>
+            <p>
+                <label for="label-2" class="label-2">Selecciona la ultima pelicula:</label><br/><br/>
+                <select id="opciones" class="form-control" [(ngModel)]="actor.ultimaPelicula">
+                <option *ngFor="let pelicula of peliculas" [value]="pelicula.titulo">{{pelicula.titulo }}</option>
+                </select>
+                <small *ngIf="UPIncorrecta" class="form-text text-danger">Ingresa la utlima pelicula</small>
+                <small *ngIf="UPIncorrecta2" class="form-text text-danger">Ingresa una opcion valida</small>
+            </p>
+            <div class="container d-flex justify-content-center align-items-center text-center">
+            
+                <div class="container d-flex justify-content-center align-items-center text-center mt-3">
+                    <button type="button" class="btn btn-outline-success" (click)="insertarActor()">Insertar</button>
+                    <button type="button" class="btn btn-outline-warning" (click)="updateActor()">Modificar</button>
+                    <button type="button" class="btn btn-outline-danger" (click)="deleteActor()">Eliminar</button>
+                </div>
+            </div>
+    
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="container">
+    <br/>
+    <div *ngIf="peliculas.length" class="aling-items-center" style="text-align: center; color: yellow; font-size:20px; font-weight:bold">
+        <h1>Lista Películas</h1><br/>
+    </div>
+
+    <div *ngIf="!peliculas.length">No hay actores registrados</div>
+
+    <table *ngIf="peliculas.length" class="table table-bordered border-primary">
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Descripcion</th>
+                <th>Genero</th>
+                <th>Fecha-Estreno</th>
+                <th>Recaudacion</th>
+                <th>Protagonista</th>
+                <th>Clasificacion</th>
+                <th>Seleccionar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pelicula of peliculas">
+                <td>{{pelicula.titulo}}</td>
+                <td>{{pelicula.descripcion}}</td>
+                <td>{{pelicula.genero}}</td>
+                <td>{{pelicula.fecha}}</td>
+                <td>{{pelicula.recaudacion}}</td>
+                <td>{{pelicula.protagonista}}</td>
+                <td>{{pelicula.clasificacion}}</td>
+                <td>
+                    <button type="button" class="btn btn-outline-secondary" (click)="selectPelicula(pelicula); mostrarDetallePelicula() " routerLink="alta-peliculas">Seleccionar</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <br/><br/>
+    <div *ngIf="peliculas.length">
+        <strong>Clasificaciones</strong><br/>
+        0: Apto para todo publico<br/>
+        1: Apto para adolecentes mayores de 12 años <br/>
+        2: Apto para adolecentes mayores de 1 años <br/>
+        3: Apto para adolecentes mayores de 17 años<br/>
+    </div>
+</div>
+<br/><br/>
+<div *ngIf="mostrarDetalle">
+    <app-alta-peliculas></app-alta-peliculas>
+  </div>

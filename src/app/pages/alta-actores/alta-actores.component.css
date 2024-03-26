@@ -1,0 +1,31 @@
+.border-rounded {
+  border-radius: 15px;
+  padding: 20px;
+  background-color: rgba(120, 171, 229, 0.963);
+}
+
+.label-styled {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  text-align: left;
+}
+.label-2{
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  text-align: left;
+}
+.valido {
+  border-color: green; /* Cambia el borde del campo a verde */
+}
+.invalido {
+  border-color: red; /* Cambia el borde del campo a rojo */
+}
+
+/* Estilos para los mensajes de error */
+.mensaje-error {
+  color: red; /* Color rojo para el texto de error */
+}

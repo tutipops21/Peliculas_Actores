@@ -1,0 +1,21 @@
+.border-rounded {
+    border-radius: 15px;
+    padding: 20px;
+    background-color: rgba(120, 171, 229, 0.963);
+  }
+
+  .label-styled {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    text-align: left;
+  }
+  .label-2{
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    text-align: left;
+  }
+  
